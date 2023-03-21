@@ -234,7 +234,7 @@ public class ConfigTests {
         datum.setValue("3.16");
         datum.setType("number");
         assertValid(datum);
-        assertEquals(datum.getConvertedValue(), new Double(3.16));
+        assertEquals(datum.getConvertedValue(), Double.valueOf(3.16));
 
         // check string type
         datum.setType("string");
@@ -258,9 +258,9 @@ public class ConfigTests {
         // turn that into a list of numbers
         datum.setType("list.number");
         assertValid(datum);
-        three.set(0, new Integer(1));
-        three.set(1, new Integer(2));
-        three.set(2, new Integer(3));
+        three.set(0, 1);
+        three.set(1, 2);
+        three.set(2, 3);
         assertEquals(datum.getConvertedValue(), three);
 
         // and a list of booleans

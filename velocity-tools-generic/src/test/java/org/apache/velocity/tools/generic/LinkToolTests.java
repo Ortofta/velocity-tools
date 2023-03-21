@@ -254,7 +254,7 @@ public class LinkToolTests {
         LinkTool link = newInstance();
         assertNull(link.getPort());
         link = newInstance(LinkTool.PORT_KEY, 42);
-        assertEquals(new Integer(42), link.getPort());
+        assertEquals(Integer.valueOf(42), link.getPort());
     }
 
     public @Test void methodPort_Object() throws Exception
@@ -262,15 +262,15 @@ public class LinkToolTests {
         LinkTool link = newInstance();
         assertNull(link.port(null).getPort());
         assertNull(link.port(":asd").getPort());
-        assertEquals(new Integer(1), link.port(1).getPort());
-        assertEquals(new Integer(42), link.port("42").getPort());
+        assertEquals(Integer.valueOf(1), link.port(1).getPort());
+        assertEquals(Integer.valueOf(42), link.port("42").getPort());
     }
 
     public @Test void methodSetPort_Object() throws Exception
     {
         LinkTool link = newInstance();
         link.setPort(42);
-        assertEquals(new Integer(42), link.getPort());
+        assertEquals(Integer.valueOf(42), link.getPort());
     }
 
     public @Test void methodGetPath() throws Exception

@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import javax.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.JspWriter;
 
 import org.apache.velocity.context.InternalContextAdapter;
 import org.apache.velocity.exception.MethodInvocationException;
@@ -409,9 +409,9 @@ public class VelocityBodyContentTest
     @Test
     public void testPrintObject() throws IOException
     {
-        jspWriter.print((Object) new Integer(42));
+        jspWriter.print(Integer.valueOf(42));
         replay(jspWriter, block, context);
-        content.print((Object) new Integer(42));
+        content.print(Integer.valueOf(42));
         verify(jspWriter, block, context);
     }
 
@@ -435,9 +435,9 @@ public class VelocityBodyContentTest
     @Test
     public void testPrintlnObject() throws IOException
     {
-        jspWriter.println((Object) new Integer(42));
+        jspWriter.println(Integer.valueOf(42));
         replay(jspWriter, block, context);
-        content.println((Object) new Integer(42));
+        content.println(Integer.valueOf(42));
         verify(jspWriter, block, context);
     }
 

@@ -512,7 +512,7 @@ public class MathTool extends FormatConfig implements Serializable
         for(int j=1;j<places;j++) {
             delta *= 10;
         }
-        return new Double((double)Math.round(value*delta)/delta);
+        return (double) Math.round(value * delta) / delta;
     }
 
 
@@ -523,7 +523,7 @@ public class MathTool extends FormatConfig implements Serializable
      */
     public Double getRandom()
     {
-        return new Double(Math.random());
+        return Double.valueOf(Math.random());
     }
 
 
@@ -567,7 +567,7 @@ public class MathTool extends FormatConfig implements Serializable
         }
         // one of the args was a floating point,
         // so don't floor the result
-        return new Double(random);
+        return Double.valueOf(random);
     }
 
 
@@ -633,7 +633,7 @@ public class MathTool extends FormatConfig implements Serializable
         {
             return null;
         }
-        return new Double(n.doubleValue());
+        return Double.valueOf(n.doubleValue());
     }
 
 
@@ -720,7 +720,7 @@ public class MathTool extends FormatConfig implements Serializable
 
         if (!isIntegral)
         {
-            return new Double(out);
+            return Double.valueOf(out);
         }
         else if (out > Integer.MAX_VALUE || out < Integer.MIN_VALUE)
         {
@@ -918,7 +918,7 @@ public class MathTool extends FormatConfig implements Serializable
         for (double value : values) {
             result += value;
         }
-        return new Double(result);
+        return Double.valueOf(result);
     }
 
     /**
@@ -934,7 +934,7 @@ public class MathTool extends FormatConfig implements Serializable
         {
             return null;
         }
-        return new Double(total.doubleValue() / values.length);
+        return Double.valueOf(total.doubleValue() / values.length);
     }
 
     /**

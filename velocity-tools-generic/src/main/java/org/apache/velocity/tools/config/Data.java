@@ -136,7 +136,7 @@ public class Data implements Comparable<Data>
     {
         try
         {
-            convertWith((Converter)clazz.newInstance());
+            convertWith((Converter)clazz.getDeclaredConstructor().newInstance());
         }
         catch (Exception e)
         {

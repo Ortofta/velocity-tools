@@ -244,7 +244,7 @@ public class ToolConfiguration extends Configuration
                     // create an instance to make sure we can do that
                     if (factoryClassname == null)
                     {
-                        clazz.newInstance();
+                        clazz.getDeclaredConstructor().newInstance();
                     }
                     else
                     {
